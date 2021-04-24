@@ -1,15 +1,15 @@
-%define		kdeappsver	20.12.3
+%define		kdeappsver	21.04.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		krdc
 Summary:	krdc
 Name:		ka5-%{kaname}
-Version:	20.12.3
+Version:	21.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	c8a70b2348742678d6f3ce947bd73051
+# Source0-md5:	68e1f61e976174fee10c3f31e11772eb
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	gettext-devel
@@ -82,8 +82,8 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/krdc
-%attr(755,root,root) %{_libdir}/libkrdccore.so.20.*.*
-%attr(755,root,root) %{_libdir}/libkrdccore.so.5
+%attr(755,root,root) %{_libdir}/libkrdccore.so.*.*.*
+%ghost %{_libdir}/libkrdccore.so.5
 %dir %{_libdir}/qt5/plugins/krdc
 %attr(755,root,root) %{_libdir}/qt5/plugins/krdc/libkrdc_testplugin.so
 %{_desktopdir}/org.kde.krdc.desktop
