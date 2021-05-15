@@ -1,15 +1,15 @@
-%define		kdeappsver	21.04.0
+%define		kdeappsver	21.04.1
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		krdc
 Summary:	krdc
 Name:		ka5-%{kaname}
-Version:	21.04.0
+Version:	21.04.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	68e1f61e976174fee10c3f31e11772eb
+# Source0-md5:	70e9b6e1dcd3d6ea629a632a84de33ab
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	gettext-devel
