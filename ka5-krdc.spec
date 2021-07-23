@@ -1,6 +1,6 @@
 %define		kdeappsver	21.04.3
-%define		kframever	5.56.0
-%define		qtver		5.9.0
+%define		kframever	5.25.0
+%define		qtver		5.14.0
 %define		kaname		krdc
 Summary:	krdc
 Name:		ka5-%{kaname}
@@ -12,28 +12,56 @@ Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kana
 # Source0-md5:	e5827992c20e206f9ec8e61d43f52dfc
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	Qt5Gui-devel >= %{qtver}
+BuildRequires:	Qt5Widgets-devel >= %{qtver}
+BuildRequires:	cmake >= 3.0
 BuildRequires:	gettext-devel
 BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
 BuildRequires:	kf5-kbookmarks-devel >= %{kframever}
 BuildRequires:	kf5-kcmutils-devel >= %{kframever}
 BuildRequires:	kf5-kcompletion-devel >= %{kframever}
 BuildRequires:	kf5-kconfig-devel >= %{kframever}
+BuildRequires:	kf5-kconfigwidgets-devel >= %{kframever}
+BuildRequires:	kf5-kcoreaddons-devel >= %{kframever}
 BuildRequires:	kf5-kdnssd-devel >= %{kframever}
+BuildRequires:	kf5-kdoctools-devel >= %{kframever}
 BuildRequires:	kf5-ki18n-devel >= %{kframever}
 BuildRequires:	kf5-kiconthemes-devel >= %{kframever}
 BuildRequires:	kf5-knotifications-devel >= %{kframever}
 BuildRequires:	kf5-knotifyconfig-devel >= %{kframever}
+BuildRequires:	kf5-kservice-devel >= %{kframever}
 BuildRequires:	kf5-kwallet-devel >= %{kframever}
 BuildRequires:	kf5-kwidgetsaddons-devel >= %{kframever}
+BuildRequires:	kf5-kwindowsystem-devel >= %{kframever}
 BuildRequires:	kf5-kxmlgui-devel >= %{kframever}
-BuildRequires:	libvncserver-devel
+BuildRequires:	libssh-devel
+BuildRequires:	libvncserver-devel >= 0.9
 BuildRequires:	ninja
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
-BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xz
+Requires:	Qt5Core >= %{qtver}
+Requires:	Qt5Gui >= %{qtver}
+Requires:	Qt5Widgets >= %{qtver}
+Requires:	kf5-kbookmarks >= %{kframever}
+Requires:	kf5-kcmutils >= %{kframever}
+Requires:	kf5-kcompletion >= %{kframever}
+Requires:	kf5-kconfig >= %{kframever}
+Requires:	kf5-kconfigwidgets >= %{kframever}
+Requires:	kf5-kcoreaddons >= %{kframever}
+Requires:	kf5-kdnssd >= %{kframever}
+Requires:	kf5-ki18n >= %{kframever}
+Requires:	kf5-knotifications >= %{kframever}
+Requires:	kf5-knotifyconfig >= %{kframever}
+Requires:	kf5-kservice >= %{kframever}
+Requires:	kf5-kwallet >= %{kframever}
+Requires:	kf5-kwidgetsaddons >= %{kframever}
+Requires:	kf5-kwindowsystem >= %{kframever}
+Requires:	kf5-kxmlgui >= %{kframever}
+Requires:	libvncserver >= 0.9
+Suggests:	freerdp2-x11
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
