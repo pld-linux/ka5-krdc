@@ -5,11 +5,12 @@
 Summary:	krdc
 Name:		ka5-%{kaname}
 Version:	21.04.3
-Release:	1
+Release:	1.1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
 # Source0-md5:	e5827992c20e206f9ec8e61d43f52dfc
+Patch0:		rdp.patch
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	gettext-devel
@@ -55,6 +56,7 @@ Pliki nagłówkowe dla programistów używających %{kaname}.
 
 %prep
 %setup -q -n %{kaname}-%{version}
+%patch0 -p1
 
 %build
 install -d build
@@ -96,6 +98,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/krdc/libkrdc_vncplugin.so
 %{_datadir}/kservices5/krdc_vnc_config.desktop
 %{_datadir}/kservices5/vnc.protocol
+%attr(755,root,root) %{_libdir}/qt5/plugins/krdc/kcms/libkcm_krdc_rdpplugin.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/krdc/libkrdc_rdpplugin.so
+%{_datadir}/kservices5/ServiceMenus/smb2rdc.desktop
+%{_datadir}/kservices5/krdc_rdp_config.desktop
+%{_datadir}/kservices5/rdp.protocol
 
 %files devel
 %defattr(644,root,root,755)
