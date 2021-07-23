@@ -10,7 +10,6 @@ License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
 # Source0-md5:	e5827992c20e206f9ec8e61d43f52dfc
-Patch0:		rdp.patch
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	gettext-devel
@@ -56,13 +55,13 @@ Pliki nagłówkowe dla programistów używających %{kaname}.
 
 %prep
 %setup -q -n %{kaname}-%{version}
-%patch0 -p1
 
 %build
 install -d build
 cd build
 %cmake \
 	-G Ninja \
+	-DFREERDP_EXECUTABLE:PATH=/usr/bin/xfreerdp \
 	-DHTML_INSTALL_DIR=%{_kdedocdir} \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	..
