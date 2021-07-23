@@ -69,6 +69,11 @@ KRDC is a client application that allows you to view or even control
 the desktop session on another machine that is running a compatible
 server. VNC and RDP is supported.
 
+%description -l pl.UTF-8
+KRDC jest aplikacją kliencką, która pozwala oglądać a nawet kontrolować
+sesję desktopową na zdalnej maszynie, na której jest uruchomiony
+kompatybilny serwer. Wspierane są VNC i RDP.
+
 %package devel
 Summary:	Header files for %{kaname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kaname}
