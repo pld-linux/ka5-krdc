@@ -38,7 +38,7 @@ BuildRequires:	libssh-devel
 BuildRequires:	libvncserver-devel >= 0.9
 BuildRequires:	ninja
 BuildRequires:	qt5-build >= %{qtver}
-BuildRequires:	rpmbuild(macros) >= 1.164
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
