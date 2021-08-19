@@ -1,15 +1,15 @@
-%define		kdeappsver	21.04.3
+%define		kdeappsver	21.08.0
 %define		kframever	5.25.0
 %define		qtver		5.14.0
 %define		kaname		krdc
 Summary:	krdc
 Name:		ka5-%{kaname}
-Version:	21.04.3
-Release:	1.1
+Version:	21.08.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	e5827992c20e206f9ec8e61d43f52dfc
+# Source0-md5:	e9a1b6fd617f3c944ae47e3f6bd05189
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
@@ -70,9 +70,9 @@ the desktop session on another machine that is running a compatible
 server. VNC and RDP is supported.
 
 %description -l pl.UTF-8
-KRDC jest aplikacją kliencką, która pozwala oglądać a nawet kontrolować
-sesję desktopową na zdalnej maszynie, na której jest uruchomiony
-kompatybilny serwer. Wspierane są VNC i RDP.
+KRDC jest aplikacją kliencką, która pozwala oglądać a nawet
+kontrolować sesję desktopową na zdalnej maszynie, na której jest
+uruchomiony kompatybilny serwer. Wspierane są VNC i RDP.
 
 %package devel
 Summary:	Header files for %{kaname} development
@@ -122,19 +122,17 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/krdc/libkrdc_testplugin.so
 %{_desktopdir}/org.kde.krdc.desktop
 %{_datadir}/config.kcfg/krdc.kcfg
-%dir %{_datadir}/kxmlgui5/krdc
-%{_datadir}/kxmlgui5/krdc/krdcui.rc
 %{_datadir}/metainfo/org.kde.krdc.appdata.xml
 %dir %{_libdir}/qt5/plugins/krdc/kcms
 %attr(755,root,root) %{_libdir}/qt5/plugins/krdc/kcms/libkcm_krdc_vncplugin.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/krdc/libkrdc_vncplugin.so
 %{_datadir}/kservices5/krdc_vnc_config.desktop
-%{_datadir}/kservices5/vnc.protocol
 %attr(755,root,root) %{_libdir}/qt5/plugins/krdc/kcms/libkcm_krdc_rdpplugin.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/krdc/libkrdc_rdpplugin.so
 %{_datadir}/kservices5/ServiceMenus/smb2rdc.desktop
 %{_datadir}/kservices5/krdc_rdp_config.desktop
-%{_datadir}/kservices5/rdp.protocol
+%{_datadir}/kservicetypes5/krdc_plugin.desktop
+%{_datadir}/qlogging-categories5/krdc.categories
 
 %files devel
 %defattr(644,root,root,755)
