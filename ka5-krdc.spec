@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	21.12.3
+%define		kdeappsver	22.04.0
 %define		kframever	5.25.0
 %define		qtver		5.14.0
 %define		kaname		krdc
 Summary:	krdc
 Name:		ka5-%{kaname}
-Version:	21.12.3
+Version:	22.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	61262f8f30d0bf40cce4d341c4fb2e46
+# Source0-md5:	7802359fdaa0e42a17afdd31052ff328
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
@@ -135,11 +135,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/qt5/plugins/krdc/kcms
 %attr(755,root,root) %{_libdir}/qt5/plugins/krdc/kcms/libkcm_krdc_vncplugin.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/krdc/libkrdc_vncplugin.so
-%{_datadir}/kservices5/krdc_vnc_config.desktop
 %attr(755,root,root) %{_libdir}/qt5/plugins/krdc/kcms/libkcm_krdc_rdpplugin.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/krdc/libkrdc_rdpplugin.so
 %{_datadir}/kservices5/ServiceMenus/smb2rdc.desktop
-%{_datadir}/kservices5/krdc_rdp_config.desktop
 %{_datadir}/kservicetypes5/krdc_plugin.desktop
 %{_datadir}/qlogging-categories5/krdc.categories
 
